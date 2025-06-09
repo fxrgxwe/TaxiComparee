@@ -1,6 +1,6 @@
 // sections/AdminPanel/AdminPanel.tsx
 import React, { useState } from "react";
-import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, query,  } from "firebase/firestore";
 import { db } from "../../firebase/firebase-config";
 import { useAuth } from "../../hooks/useAuth";
 import { useEffect } from "react";

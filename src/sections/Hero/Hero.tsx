@@ -9,7 +9,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ city, setCity }) => {
     return (
         <section className="py-12 text-center bg-gray-950 text-white mt-[60px]">
-            <h1 className="text-4xl font-bold mb-4">МАКСИМ ПІДАРОК БЕЗ СВАГИ</h1>
+            <h1 className="text-4xl font-bold mb-4">МАКС РУНЬКО ІДИ НАХУЙ ПОНЯВ СУКА?</h1>
             <p className="text-gray-400 mb-6">
                 Порівняй сервіси таксі за ціною, рейтингом, часом подачі та знайди персональні рекомендації
             </p>

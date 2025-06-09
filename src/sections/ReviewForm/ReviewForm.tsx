@@ -8,21 +8,25 @@ interface Props {
     city: string;
 }
 
+
 const ReviewForm: React.FC<Props> = ({ city }) => {
     const [formData, setFormData] = useState({
         rating: 5,
         comment: "",
         service: "",
+        name: "",
     });
 
     const [success, setSuccess] = useState(false);
 
     const { user } = useAuth();
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-    };
+
+   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const { name, value } = e.target;
+  setFormData(prev => ({ ...prev, [name]: value }));
+};
+
 
     const handleRatingClick = (rating: number) => {
         setFormData((prev) => ({ ...prev, rating }));
@@ -32,7 +36,10 @@ const ReviewForm: React.FC<Props> = ({ city }) => {
         e.preventDefault();
 
         if (!city) return;
-
+        if (!user) {
+            console.error("Користувач не авторизований");
+            return;
+        }
         try {
             await addDoc(collection(db, "reviews"), {
                 ...formData,

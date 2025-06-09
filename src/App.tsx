@@ -7,7 +7,6 @@ import Reviews from './sections/Reviews/Reviews';
 import ReviewForm from './sections/ReviewForm/ReviewForm';
 import Footer from './sections/Footer/Footer';
 import ComparisonTable from './sections/ComparisonTable/ComparisonTable';
-import AdminPanel from './sections/AdminPanel/AdminPanel';
 
 
 import { useTaxiServices } from './hooks/useTaxiServices';

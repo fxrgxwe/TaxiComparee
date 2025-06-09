@@ -1,6 +1,6 @@
 // components/ComparisonTable.tsx
 import React from "react";
-import { TaxiService } from "../hooks/useTaxiServices"; // тип із хука
+import { TaxiService } from "../../hooks/useTaxiServices"; // тип із хука
 
 interface Props {
     services: TaxiService[];
@@ -45,7 +45,7 @@ const ComparisonTable: React.FC<Props> = ({ services }) => {
 
                                 <td className="px-4 py-3">
                                     <ul className="list-disc list-inside text-sm text-gray-400">
-                                        {service.options.map((opt, i) => (
+                                        {service.options.map((opt: string, i: number) => (
                                             <li key={i}>{opt}</li>
                                         ))}
                                     </ul>

@@ -10,6 +10,7 @@ export interface Review {
     rating: number;
     comment: string;
     timestamp: any;
+    service: string;
 }
 
 export const useReviews = (city: string) => {

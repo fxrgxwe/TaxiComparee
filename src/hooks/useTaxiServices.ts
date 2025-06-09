@@ -15,11 +15,13 @@ export interface TaxiService {
     price: number;
     waitTime: string;
     options: string[];
+    avgRating: number;
+    reviewCount: number;
 }
 
 // Розширена структура з рейтингом і кількістю відгуків
 export interface TaxiServiceWithAvgRating extends TaxiService {
-    avgRating: number | null;
+    avgRating: number ; 
     reviewCount: number;
 }
 
@@ -58,7 +60,7 @@ export const useTaxiServices = (city: string) => {
                         const avg =
                             ratings.length > 0
                                 ? Number((ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1))
-                                : null;
+                                : 0;
 
                         return {
                             ...service,
